@@ -30,6 +30,10 @@ public class MyFactoryBean implements FactoryBean, InvocationHandler {
         return aClass;
     }
 
+    public boolean isSingleton() {
+        return false;
+    }
+
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         Select annotation = method.getAnnotation(Select.class);
