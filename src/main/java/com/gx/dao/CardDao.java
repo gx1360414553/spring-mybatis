@@ -2,6 +2,9 @@ package com.gx.dao;
 
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author 高雄
  * @version 1.0.0
@@ -11,5 +14,5 @@ import org.apache.ibatis.annotations.Select;
 public interface CardDao {
 
     @Select("select * from user")
-    void list(String name);
+    List<Map<Object, Object>> list(String name);
 }

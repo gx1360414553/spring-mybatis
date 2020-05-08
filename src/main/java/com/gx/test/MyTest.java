@@ -5,6 +5,8 @@ import com.gx.dao.CardDao;
 import com.gx.service.CardService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.lang.reflect.Proxy;
+
 /**
  * @author 高雄
  * @version 1.0.0
@@ -14,9 +16,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MyTest {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Appconfig.class);
-        CardService bean = annotationConfigApplicationContext.getBean(CardService.class);
-        bean.list("41523");
-//        CardDao cardDao = (CardDao) annotationConfigApplicationContext.getBean("cardDao");
-//        cardDao.list("123");
+//        CardService bean = annotationConfigApplicationContext.getBean(CardService.class);
+//        System.out.println(bean.list("41523"));
+        CardDao cardDao = (CardDao) annotationConfigApplicationContext.getBean("cardDao");
+        System.out.println(cardDao.list("123"));
+
     }
 }

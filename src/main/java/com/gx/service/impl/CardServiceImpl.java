@@ -5,6 +5,9 @@ import com.gx.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author 高雄
  * @version 1.0.0
@@ -17,7 +20,7 @@ public class CardServiceImpl implements CardService {
     @Autowired
     private CardDao cardDao;
 
-    public void list(String name) {
-        cardDao.list(name);
+    public List<Map<Object, Object>> list(String name) {
+        return cardDao.list(name);
     }
 }

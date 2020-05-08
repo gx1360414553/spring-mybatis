@@ -1,5 +1,8 @@
 package com.gx.service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author 高雄
  * @version 1.0.0
@@ -8,5 +11,5 @@ package com.gx.service;
  */
 public interface CardService {
 
-    void list(String name);
+    List<Map<Object, Object>> list(String name);
 }
